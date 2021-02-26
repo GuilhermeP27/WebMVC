@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CRUD.Models.AULA_MD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AulaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AulaDescricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AulaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AulaDescricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AulaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AulaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AulaId })
+        </td>
+    </tr>
+}
+
+</table>
